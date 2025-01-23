@@ -197,9 +197,9 @@ const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 
 // Konfigurasi JWT
 const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret_key';
-
+const RPC_URL = process.env.RPC_URL || 'http://127.0.0.1:8545';
 // Hubungkan ke provider Ethereum (contoh: Ganache atau Infura)
-const provider = new ethers.JsonRpcProvider("http://127.0.0.1:8545"); // Ganti dengan URL node Anda
+const provider = new ethers.JsonRpcProvider(RPC_URL); // Ganti dengan URL node Anda
 const privateKey = process.env.PRIVATE_KEY; // Kunci privat akun pengirim transaksi
 const wallet = new ethers.Wallet(privateKey, provider);
 const contract = new ethers.Contract(contractAddress, contractABI, wallet);
